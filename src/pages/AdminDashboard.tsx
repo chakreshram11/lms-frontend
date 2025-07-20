@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { fetchUsers, createUser, deleteUser } from "@/api/userApi"
-import { createCourse, fetchCourses } from "@/api/courseApi"
+import { fetchCourses } from "@/api/courseApi"
 import { fetchAllAttendance, exportAttendance } from "@/api/attendanceApi"
-import { fetchAllLiveLinks, createLiveLink, updateLiveLink, toggleLiveLinkStatus, deleteLiveLink } from "@/api/liveClassApi"
+import { fetchAllLiveLinks, createLiveLink, toggleLiveLinkStatus, deleteLiveLink } from "@/api/liveClassApi"
 import { fetchAllNotifications, createNotification, deleteNotification } from "@/api/notificationApi"
 
 const modules = [
@@ -582,7 +582,7 @@ const AdminDashboard = () => {
                   <span>{c.description}</span>
                   {c.pdfUrl && (
                     <div className="flex items-center gap-2 mt-1">
-                      <a href={`http://localhost:3000${c.pdfUrl}`} target="_blank" rel="noopener noreferrer" style={{ color: '#388bff' }}>
+                      <a href={`https://lms-server-915k.onrender.com${c.pdfUrl}`} target="_blank" rel="noopener noreferrer" style={{ color: '#388bff' }}>
                         View PDF
                       </a>
                       <button onClick={() => handleDeletePdf(c._id)} className="px-2 py-1 rounded" style={{ backgroundColor: '#388bff', color: '#fff' }}>
@@ -675,7 +675,7 @@ const AdminDashboard = () => {
                     <div className="font-bold text-lg" style={{ color: '#388bff' }}>{a.title}</div>
                     <div>{a.description}</div>
                     {a.type === 'theory' && a.pdfUrl && (
-                      <a href={`http://localhost:3000${a.pdfUrl}`} target="_blank" rel="noopener noreferrer" style={{ color: '#388bff' }}>
+                      <a href={`https://lms-server-915k.onrender.com${a.pdfUrl}`} target="_blank" rel="noopener noreferrer" style={{ color: '#388bff' }}>
                         View PDF
                       </a>
                     )}
