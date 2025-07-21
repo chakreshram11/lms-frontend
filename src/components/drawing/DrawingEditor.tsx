@@ -23,12 +23,12 @@ function LocalEditor() {
     const { drawingData, setDrawingData } = useAppContext()
 
     const handleChangeEvent = useCallback(
-    () => {
-        // Update the drawing data in the context (local only)
-        setDrawingData(editor.store.getSnapshot())
-    },
-    [editor.store, setDrawingData],
-);
+        () => {
+            // Update the drawing data in the context (local only)
+            setDrawingData(editor.store.getSnapshot())
+        },
+        [editor.store, setDrawingData],
+    )
 
     useEffect(() => {
         // Load the drawing data from the context
