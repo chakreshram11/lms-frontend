@@ -27,7 +27,7 @@ export const useSocket = (): SocketContextType => {
     return context
 }
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://lms-server-915k.onrender.com"
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "https://lms-server-915k.onrender.com"
 
 const SocketProvider = ({ children }: { children: ReactNode }) => {
     const {
