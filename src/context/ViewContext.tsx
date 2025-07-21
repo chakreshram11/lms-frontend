@@ -2,6 +2,7 @@ import FilesView from "@/components/sidebar/sidebar-views/FilesView"
 import SettingsView from "@/components/sidebar/sidebar-views/SettingsView"
 import UsersView from "@/components/sidebar/sidebar-views/UsersView"
 import useWindowDimensions from "@/hooks/useWindowDimensions"
+import ChatsView from "../components/sidebar/sidebar-views/ChatsView";
 import { VIEWS, ViewContext as ViewContextType } from "@/types/view"
 import { ReactNode, createContext, useContext, useState } from "react"
 import { IoSettingsOutline } from "react-icons/io5"
@@ -26,11 +27,13 @@ function ViewContextProvider({ children }: { children: ReactNode }) {
         [VIEWS.FILES]: <FilesView />,
         [VIEWS.CLIENTS]: <UsersView />,
         [VIEWS.SETTINGS]: <SettingsView />,
+        [VIEWS.CHATS]: <ChatsView />,
     })
     const [viewIcons] = useState({
         [VIEWS.FILES]: <LuFiles size={28} />,
         [VIEWS.CLIENTS]: <PiUsers size={30} />,
         [VIEWS.SETTINGS]: <IoSettingsOutline size={28} />,
+        [VIEWS.CHATS]: <ChatsView />,
     })
 
     return (

@@ -2,6 +2,7 @@ enum VIEWS {
     FILES = "FILES",
     CLIENTS = "CLIENTS",
     SETTINGS = "SETTINGS",
+    CHATS = "CHATS",
 }
 
 interface ViewContext {
